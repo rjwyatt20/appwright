@@ -66,8 +66,8 @@ Follow the steps mentioned in ${androidSimulatorConfigDocLink} to run test on An
   }
 
   private async createDriver(): Promise<Device> {
-    const appiumMajorVersion = dependencies.appium.split('.')[0];
-    const uiAutomatorVersion = appiumMajorVersion.includes('2')
+    const appiumMajorVersion = dependencies.appium.split(".")[0] ?? "";
+    const uiAutomatorVersion = appiumMajorVersion.includes("2")
       ? "uiautomator2@2"
       : "uiautomator2";
     await installDriver(
